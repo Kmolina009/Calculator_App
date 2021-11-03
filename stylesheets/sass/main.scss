@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
-@import "footer", "calc-sections/calc-sections";
+@import "custom-properties","footer", "calc-sections/calc-sections";
 
 
 *{
     box-sizing: border-box;
 }
 body{
-    background-color: #3C4562;
+    background-color: $main-dark-desaturated-blue-1;
     max-width: 1440px;
     max-height: 1024px;
     height: 100vh;
@@ -16,7 +16,7 @@ body{
         // font-family: ;
         margin: 0 auto;
         padding: 2% 0;
-        background-color: #3C4562;
+        background-color: $main-dark-desaturated-blue-1;
         height: 662px;
         width: 505px;
         border-radius: 0px;

@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+footer {
+  display: block;
+  margin: 5%;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
