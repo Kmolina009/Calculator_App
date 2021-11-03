@@ -1,4 +1,4 @@
-@use "footer";
+@import "footer", "calc-sections/calc-header";
 *{
     box-sizing: border-box;
 }
@@ -17,13 +17,6 @@ body{
         section{
             margin: 0 auto;
             margin-bottom: 3%;
-        }
-        .calc-header{
-            background-color: white;
-            max-width: 498px;
-            width: 498px;
-            height: 72px;
-            max-height: 72px;
         }
         .calc-output{
             height:115px;
