@@ -1,32 +1,28 @@
-@import "footer", "calc-sections/calc-header";
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+@import "footer", "calc-sections/calc-sections";
+
+
 *{
     box-sizing: border-box;
 }
 body{
+    background-color: #3C4562;
     max-width: 1440px;
     max-height: 1024px;
     height: 100vh;
     width: 100vw;
+    font-family: 'Spartan', sans-serif;
     main{
+        // font-family: ;
         margin: 0 auto;
         padding: 2% 0;
-        background-color: black;
+        background-color: #3C4562;
         height: 662px;
         width: 505px;
         border-radius: 0px;
         section{
             margin: 0 auto;
             margin-bottom: 3%;
-        }
-        .calc-output{
-            height:115px;
-            width: 488px;
-            background-color: white;
-        }
-        .calc-button-grid{ 
-            width:488px;
-            height:434px;
-            background-color: white;
         }
     }
 }
