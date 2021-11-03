@@ -1,3 +1,50 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
 
+.attribution a {
+  color: #3e52a3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1440px;
+  max-height: 1024px;
+  height: 100vh;
+  width: 100vw;
+}
+body main {
+  margin: 0 auto;
+  padding: 2% 0;
+  background-color: black;
+  height: 662px;
+  width: 505px;
+  border-radius: 0px;
+}
+body main section {
+  margin: 0 auto;
+  margin-bottom: 3%;
+}
+body main .calc-header {
+  background-color: white;
+  max-width: 498px;
+  width: 498px;
+  height: 72px;
+  max-height: 72px;
+}
+body main .calc-output {
+  height: 115px;
+  width: 488px;
+  background-color: white;
+}
+body main .calc-button-grid {
+  width: 488px;
+  height: 434px;
+  background-color: white;
+}
 
 /*# sourceMappingURL=style.css.map */
