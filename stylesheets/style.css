@@ -13,7 +13,7 @@ footer {
   color: #3e52a3;
 }
 
-h1, .toggle-container {
+h1.toggle-container {
   color: white;
 }
 
@@ -21,11 +21,13 @@ h1, .toggle-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #3C4562;
+  background-color: #182034;
+  background-color: #232c43;
   max-width: 498px;
   width: 498px;
   height: 72px;
   max-height: 72px;
+  background-color: #3e4860;
 }
 .calc-header .toggle-container {
   display: flex;
@@ -37,26 +39,32 @@ h1, .toggle-container {
   justify-content: space-around;
 }
 .calc-header .toggle-container .toggle {
-  background-color: #181F32;
+  background-color: #182034;
   height: 25px;
   width: 61px;
+  padding: 3px 0px 0px 4px;
+  border-radius: 10.5rem;
 }
 .calc-header .toggle-container .toggle div:first-child {
+  margin: 0 0;
   width: 33%;
-  height: 100%;
+  height: 81%;
   background-color: red;
+  border-radius: 50%;
 }
 
 .calc-output {
   height: 115px;
   width: 488px;
-  background-color: white;
+  background-color: #182034;
+  border-radius: 0.2rem;
 }
 
 .calc-button-grid {
   width: 488px;
   height: 434px;
-  background-color: white;
+  background-color: #182034;
+  border-radius: 0.2rem;
 }
 
 * {
@@ -64,7 +72,7 @@ h1, .toggle-container {
 }
 
 body {
-  background-color: #3C4562;
+  background-color: #3e4860;
   max-width: 1440px;
   max-height: 1024px;
   height: 100vh;
@@ -74,7 +82,7 @@ body {
 body main {
   margin: 0 auto;
   padding: 2% 0;
-  background-color: #3C4562;
+  background-color: #3e4860;
   height: 662px;
   width: 505px;
   border-radius: 0px;
