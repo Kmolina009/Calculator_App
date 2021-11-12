@@ -15,6 +15,12 @@
     .toggle-container{
         display: flex;
         flex-direction: row;
+        div{
+            p{
+                font-size: .8rem;
+                padding: 11px 10px 0 0;
+            }
+        }
     .theme-number{
         display: flex;
         flex-direction: row;

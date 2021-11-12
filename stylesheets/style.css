@@ -30,6 +30,10 @@ footer {
   display: flex;
   flex-direction: row;
 }
+.calc-header .toggle-container div p {
+  font-size: 0.8rem;
+  padding: 11px 10px 0 0;
+}
 .calc-header .toggle-container .theme-number {
   display: flex;
   flex-direction: row;
