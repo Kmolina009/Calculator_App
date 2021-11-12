@@ -13,11 +13,8 @@ footer {
   color: #3e52a3;
 }
 
-h1.toggle-container {
-  color: white;
-}
-
 .calc-header {
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
