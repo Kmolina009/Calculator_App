@@ -60,6 +60,14 @@ footer {
   background-color: #182034;
   border-radius: 0.2rem;
 }
+.calc-output p {
+  font-size: 3rem;
+  float: right;
+  line-height: 0;
+  color: white;
+  padding-top: 3%;
+  padding-right: 4%;
+}
 
 .calc-button-grid {
   width: 488px;
