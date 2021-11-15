@@ -47,7 +47,12 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
-
+----
+## ***Task List***
+   Reach MVP
+  - Build Basic phase of front-end
+    -  Theme 1 styling being the default
+    - Calculator functionality established
 ### Built with
 
 - Semantic HTML5 markup

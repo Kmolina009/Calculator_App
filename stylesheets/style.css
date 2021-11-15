@@ -90,7 +90,6 @@ footer {
   justify-content: space-evenly;
 }
 .calc-button-grid .grid-row div {
-  font-family: sans-serif;
   height: 54px;
   width: 93px;
   text-align: center;
