@@ -47,17 +47,20 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
-
+----
+## ***Task List***
+   Reach MVP
+  - Build Basic phase of front-end
+    -  Theme 1 styling being the default
+    - Calculator functionality established
+---
 ### Built with
 
 - Semantic HTML5 markup
+- SASS
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Vanilla Javascript
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
@@ -67,19 +70,6 @@ Use this section to recap over some of your major learnings while working throug
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
