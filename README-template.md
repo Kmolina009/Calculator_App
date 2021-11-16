@@ -51,7 +51,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ## ***Task List***
    Reach MVP
   - Build Basic phase of front-end
-    -  Theme 1 styling being the default
+      ~Theme 1 styling being the default~
     - Calculator functionality established
 ---
 ### Built with
