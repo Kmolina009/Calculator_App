@@ -21,20 +21,33 @@ elements needed
 //These variables hold inputs
 let calcHoldings = [];
 let inputHoldings = "";
+let outputHolding = "";
 // listen for key events
 let calcOutput = document.querySelector(
   "body > main > section.calc-output > p"
 );
 let calcGrid = document.querySelector(".calc-button-grid");
-let reset = () => {
+// ******************************** RESET FUNCTIONS *********************************************
+let resetCalcHoldings = () => {
+    return  calcHoldings = [];
+}
+let resetinputHoldings = () => {
+    return  inputHoldings = "";
+}
+let totalReset = () => {
   inputHoldings = "";
-  calcHoldings = [];
-  return (calcOutput.innerText = "0");
+  resetCalcHoldings();
+  return calcOutput.innerText = "0";
 };
 
 // Operations
-
-let addition = (a, b) => {
+let operandCheck=(arr)=>{
+    let regexTest = /[x+/-]/i;
+    if(regexTest.test(arr.join(""))){
+        return arr[0]
+    }
+}
+let addition = (a, b=a) => {
   return a + b;
 };
 let subtraction = (a, b) => {
@@ -46,29 +59,31 @@ let multiplication = (a, b) => {
 let division = (a, b) => {
   return a / b;
 };
+// Listens for Equal Sign Button's Click event
 let evaluateExpression = expr => {
-  console.log("Evaluating Expression....");
+    operandCheck(expr);
   console.log(expr);
   // pass these into operation function
   let operands = expr
-    .filter(e => {
-      return parseFloat(e);
-    })
-    .map(e => Number(e));
-  console.log(operands);
+        .filter(e => {
+            return parseFloat(e);
+        })
+        .map(e => Number(e));
   // keep operator on hand for switch
   let operation = String(expr.filter(e => isNaN(e)));
-  console.log(operation);
-  if (expr.length < 2) {
-    console.log(expr[0]);
-    return expr[0];
-  } else if (expr.length === 3) {
+        console.log(operation);
+        if (expr.length < 2) {
+            console.log(expr[0]);
+            return expr[0];
+  } else if (expr.length >=3) {
     //evaluate the expression's non number
     //expr is an array => filter and select the first item
     switch (operation) {
       case "+":
-        console.log("Adding Numbers");
-        return (calcOutput.innerText = addition(operands[0], operands[1]));
+          resetCalcHoldings();
+          resetinputHoldings();
+        return calcOutput.innerText = addition(...operands);
+        // return (clack.innerText = addition(...operands));
 
         break;
       case "-":
@@ -79,16 +94,22 @@ let evaluateExpression = expr => {
         break;
 
       default:
+        //   Resets if input is invalid
+          totalReset();
         break;
     }
   }
 };
 
-reset();
+totalReset();
 // Will need to refactor this code
 calcGrid.addEventListener("click", function(e) {
+    console.log(inputHoldings)
+    console.log(calcHoldings)
   // ignore grid-row
   if (e.target.getAttribute("class").includes("calc-key")) {
+    //   Update console of expression
+    console.log(`Calculator's holdings : ${calcHoldings}`)
     let pressedKey = e.target.dataset.keytype;
     switch (pressedKey) {
       case "number":
@@ -107,14 +128,19 @@ calcGrid.addEventListener("click", function(e) {
         break;
       case "equals":
         console.log("I'm an Equals Button");
+        if(inputHoldings == '' || undefined){
+            inputHoldings = 0;
+        }
         calcHoldings.push(inputHoldings);
-        calcOutput.innerText = evaluateExpression(calcHoldings);
+        // There might be a need for an updateOutput function to handle display of calculated data
+        outputHolding = [evaluateExpression(calcHoldings)];
+        console.log(calcHoldings)
+        calcOutput.innerText = outputHolding;
         break;
       case "reset":
         console.log("I'm a Reset Button");
-        // resetButton
         // empty input and Output holdings
-        reset();
+        totalReset();
 
         break;
       case "delete":
@@ -131,11 +157,9 @@ calcGrid.addEventListener("click", function(e) {
   //Numbers get added to inputHoldings
   //Operator push inputHoldings and selected operator(if there already is an operator)
 
-  /*
-        switch case
-            add to calcHoldings
-        */
+
 });
 
 //number key
 //reset key
+
