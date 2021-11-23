@@ -29,73 +29,80 @@ let calcOutput = document.querySelector(
 let calcGrid = document.querySelector(".calc-button-grid");
 // ******************************** RESET FUNCTIONS *********************************************
 let resetCalcHoldings = () => {
-    return  calcHoldings = [];
-}
+  return (calcHoldings = []);
+};
 let resetinputHoldings = () => {
-    return  inputHoldings = "";
-}
+  return (inputHoldings = "");
+};
 let totalReset = () => {
   inputHoldings = "";
   resetCalcHoldings();
-  return calcOutput.innerText = "0";
+  return (calcOutput.innerText = "0");
 };
 
 // Operations
-let operandCheck=(arr)=>{
-    let regexTest = /[x+/-]/i;
-    if(regexTest.test(arr.join(""))){
-        return arr[0]
-    }
-}
-let addition = (a, b=a) => {
+let operandCheck = (arr) => {
+  let regexTest = /[x+/-]/i;
+  if (regexTest.test(arr.join(""))) {
+    return arr[0];
+  }
+};
+let addition = (a, b = a) => {
   return a + b;
 };
-let subtraction = (a, b) => {
+let subtraction = (a, b = a) => {
   return a - b;
 };
-let multiplication = (a, b) => {
+let multiplication = (a, b = a) => {
   return a * b;
 };
-let division = (a, b) => {
+let division = (a, b = a) => {
   return a / b;
 };
 // Listens for Equal Sign Button's Click event
-let evaluateExpression = expr => {
-    operandCheck(expr);
+let evaluateExpression = (expr) => {
+  operandCheck(expr);
   console.log(expr);
   // pass these into operation function
   let operands = expr
-        .filter(e => {
-            return parseFloat(e);
-        })
-        .map(e => Number(e));
+    .filter((e) => {
+      return parseFloat(e);
+    })
+    .map((e) => Number(e));
   // keep operator on hand for switch
-  let operation = String(expr.filter(e => isNaN(e)));
-        console.log(operation);
-        if (expr.length < 2) {
-            console.log(expr[0]);
-            return expr[0];
-  } else if (expr.length >=3) {
+  let operation = String(expr.filter((e) => isNaN(e)));
+  console.log(operation);
+  if (expr.length < 2) {
+    console.log(expr[0]);
+    return expr[0];
+  } else if (expr.length >= 3) {
     //evaluate the expression's non number
     //expr is an array => filter and select the first item
     switch (operation) {
       case "+":
-          resetCalcHoldings();
-          resetinputHoldings();
-        return calcOutput.innerText = addition(...operands);
-        // return (clack.innerText = addition(...operands));
-
+        resetCalcHoldings();
+        resetinputHoldings();
+        return (calcOutput.innerText = addition(...operands));
         break;
       case "-":
+        resetCalcHoldings();
+        resetinputHoldings();
+        return (calcOutput.innerText = subtraction(...operands)) ;
         break;
-      case "*":
+      case "x":
+        resetCalcHoldings();
+        resetinputHoldings();
+        return (calcOutput.innerText = multiplication(...operands));
         break;
       case "/":
+        resetCalcHoldings();
+        resetinputHoldings();
+        return (calcOutput.innerText = division(...operands));
         break;
 
       default:
         //   Resets if input is invalid
-          totalReset();
+        totalReset();
         break;
     }
   }
@@ -103,13 +110,13 @@ let evaluateExpression = expr => {
 
 totalReset();
 // Will need to refactor this code
-calcGrid.addEventListener("click", function(e) {
-    console.log(inputHoldings)
-    console.log(calcHoldings)
+calcGrid.addEventListener("click", function (e) {
+  console.log(inputHoldings);
+  console.log(calcHoldings);
   // ignore grid-row
   if (e.target.getAttribute("class").includes("calc-key")) {
     //   Update console of expression
-    console.log(`Calculator's holdings : ${calcHoldings}`)
+    console.log(`Calculator's holdings : ${calcHoldings}`);
     let pressedKey = e.target.dataset.keytype;
     switch (pressedKey) {
       case "number":
@@ -128,13 +135,13 @@ calcGrid.addEventListener("click", function(e) {
         break;
       case "equals":
         console.log("I'm an Equals Button");
-        if(inputHoldings == '' || undefined){
-            inputHoldings = 0;
+        if (inputHoldings == "" || undefined) {
+          inputHoldings = 0;
         }
         calcHoldings.push(inputHoldings);
         // There might be a need for an updateOutput function to handle display of calculated data
         outputHolding = [evaluateExpression(calcHoldings)];
-        console.log(calcHoldings)
+        console.log(calcHoldings);
         calcOutput.innerText = outputHolding;
         break;
       case "reset":
@@ -156,10 +163,7 @@ calcGrid.addEventListener("click", function(e) {
 
   //Numbers get added to inputHoldings
   //Operator push inputHoldings and selected operator(if there already is an operator)
-
-
 });
 
 //number key
 //reset key
-
