@@ -1,23 +1,3 @@
-/*
-elements needed
-    calc-button-grid for event delegation
-    grid-row
-    calc key
-        -rv
-        -number
-        -operator
-        - equals
-    Calculator functions,
-        Take input
-        key events based on type
-        numbers -> pressed show up on screen, logged in calculator holdings
-        operations -> push displayed number into calculator-holdings
-        removal - if text = del, remove one interger from right to left
-        submit( = sign) => two number, one operation -> return the result based on combination
-                            1 number -> return number 
-
-*/
-
 //These variables hold inputs
 let calcHoldings = [];
 let inputHoldings = "";
@@ -152,6 +132,12 @@ calcGrid.addEventListener("click", function (e) {
         break;
       case "delete":
         console.log("I'm a Delete Button");
+        inputHoldings = inputHoldings.slice(0,inputHoldings.length-1);
+        calcOutput.innerText= inputHoldings;
+        if(inputHoldings.length===0||inputHoldings===""){
+          resetinputHoldings()
+          calcOutput.innerText = 0;
+        }
         // remove the rightmost element from the inputHoldins
         break;
 
