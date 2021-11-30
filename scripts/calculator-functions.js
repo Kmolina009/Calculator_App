@@ -39,10 +39,9 @@ let multiplication = (a, b = a) => {
 let division = (a, b = a) => {
   return a / b;
 };
-// Listens for Equal Sign Button's Click event
+// Listen's for Equal Sign Button's Click event
 let evaluateExpression = (expr) => {
   operandCheck(expr);
-  console.log(expr);
   // pass these into operation function
   let operands = expr
     .filter((e) => {
@@ -51,13 +50,10 @@ let evaluateExpression = (expr) => {
     .map((e) => Number(e));
   // keep operator on hand for switch
   let operation = String(expr.filter((e) => isNaN(e)));
-  console.log(operation);
   if (expr.length < 2) {
-    console.log(expr[0]);
     return expr[0];
   } else if (expr.length >= 3) {
     //evaluate the expression's non number
-    //expr is an array => filter and select the first item
     switch (operation) {
       case "+":
         resetCalcHoldings();
@@ -89,67 +85,41 @@ let evaluateExpression = (expr) => {
 };
 
 totalReset();
-// Will need to refactor this code
 calcGrid.addEventListener("click", function (e) {
-  console.log(inputHoldings);
-  console.log(calcHoldings);
-  // ignore grid-row
   if (e.target.getAttribute("class").includes("calc-key")) {
-    //   Update console of expression
-    console.log(`Calculator's holdings : ${calcHoldings}`);
     let pressedKey = e.target.dataset.keytype;
     switch (pressedKey) {
       case "number":
-        console.log(e.target);
         inputHoldings += e.target.innerText;
-        console.log(inputHoldings);
         calcOutput.innerText = inputHoldings;
         break;
       case "operator":
-        console.log("I'm an operator");
         calcHoldings.push(inputHoldings);
         calcHoldings.push(e.target.innerText);
         inputHoldings = "";
-
-        // If input holdings is empty, push number with operator
         break;
       case "equals":
-        console.log("I'm an Equals Button");
         if (inputHoldings == "" || undefined) {
           inputHoldings = 0;
         }
         calcHoldings.push(inputHoldings);
-        // There might be a need for an updateOutput function to handle display of calculated data
         outputHolding = [evaluateExpression(calcHoldings)];
-        console.log(calcHoldings);
         calcOutput.innerText = outputHolding;
         break;
       case "reset":
-        console.log("I'm a Reset Button");
-        // empty input and Output holdings
         totalReset();
 
         break;
       case "delete":
-        console.log("I'm a Delete Button");
         inputHoldings = inputHoldings.slice(0,inputHoldings.length-1);
         calcOutput.innerText= inputHoldings;
         if(inputHoldings.length===0||inputHoldings===""){
           resetinputHoldings()
           calcOutput.innerText = 0;
         }
-        // remove the rightmost element from the inputHoldins
         break;
-
       default:
         break;
     }
   }
-  // determine key on case by case basis(Switch)
-
-  //Numbers get added to inputHoldings
-  //Operator push inputHoldings and selected operator(if there already is an operator)
 });
-
-//number key
-//reset key
