@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Calculator app</title>
   <link rel="stylesheet" href="stylesheets/style.css">
 </head>
@@ -35,32 +33,32 @@
     </section>
     <section class="calc-button-grid">
       <section class="grid-row">
-        <div class="calc-key">7</div>
-        <div class="calc-key">8</div>
-        <div class="calc-key">9</div>
-        <div class="calc-key rv-key">DEL</div>
+        <div class="calc-key" data-keyType ="number">7</div>
+        <div class="calc-key" data-keyType ="number" >8</div>
+        <div class="calc-key" data-keyType ="number">9</div>
+        <div class="calc-key rv-key" data-keyType ="delete">DEL</div>
       </section>
       <section class="grid-row">
-        <div class="calc-key">4</div>
-        <div class="calc-key">5</div>
-        <div class="calc-key">6</div>
-        <div class="calc-key">+</div>
+        <div class="calc-key" data-keyType ="number">4</div>
+        <div class="calc-key" data-keyType ="number">5</div>
+        <div class="calc-key" data-keyType ="number">6</div>
+        <div class="calc-key" data-keyType ="operator">+</div>
       </section>
       <section class="grid-row">
-        <div class="calc-key">1</div>
-        <div class="calc-key">2</div>
-        <div class="calc-key">3</div>
-        <div class="calc-key">-</div>
+        <div class="calc-key"data-keyType ="number">1</div>
+        <div class="calc-key"data-keyType ="number">2</div>
+        <div class="calc-key"data-keyType ="number">3</div>
+        <div class="calc-key" data-keyType ="operator">-</div>
       </section>
       <section class="grid-row">
-        <div class="calc-key">.</div>
-        <div class="calc-key">0</div>
-        <div class="calc-key">/</div>
-        <div class="calc-key">x</div>
+        <div class="calc-key" data-keyType ="number">.</div>
+        <div class="calc-key"data-keyType ="number">0</div>
+        <div class="calc-key" data-keyType ="operator">/</div>
+        <div class="calc-key" data-keyType ="operator">x</div>
       </section>
       <section class="grid-row">
-            <div class="calc-key rv-key">RESET</div>
-            <div class="calc-key sbmt-key">=</div>
+            <div class="calc-key rv-key" data-keyType ="reset">RESET</div>
+            <div class="calc-key sbmt-key" data-keyType ="equals">=</div>
       </section>
     </section>
   </main>
@@ -71,4 +69,5 @@
   </div>
 </footer>  
 </body>
+<script src="./scripts/calculator-functions.js"></script>
 </html>
