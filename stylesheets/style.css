@@ -40,20 +40,38 @@ footer {
   justify-content: space-around;
 }
 .calc-header .toggle-container .toggle {
+  display: inline-flex;
+  flex-direction: row;
   background-color: #182034;
   height: 25px;
   width: 61px;
   padding: 3px 0px 0px 4px;
   border-radius: 10.5rem;
 }
-.calc-header .toggle-container .toggle div:first-child {
+.calc-header .toggle-container .toggle .toggle-selection {
   margin: 0 0;
   width: 33%;
   height: 81%;
-  background-color: red;
   border-radius: 50%;
 }
-
+.calc-header .toggle-container .toggle .toggle-selection span.checkmark {
+  margin-top: 10%;
+  display: inline-block;
+  height: 75%;
+  width: 73%;
+  border-radius: 50%;
+  transition: opacity 0.3s ease;
+  opacity: 0.3;
+}
+.calc-header .toggle-container .toggle .toggle-selection input:checked + .checkmark {
+  opacity: 1;
+  display: inline-block;
+  z-index: 2;
+  background-color: red;
+}
+.calc-header .toggle-container .toggle .toggle-selection input:not(:checked) + .checkmark:hover {
+  background-color: red;
+}
 .calc-output {
   height: 115px;
   width: 488px;

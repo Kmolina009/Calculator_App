@@ -20,11 +20,28 @@
             <div data-theme=["2"]>2</div>
             <div data-theme=["3"]>3</div>
           </div>
-          <div class=toggle>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+          <!-- <div class=toggle> -->
+          <form class=toggle>
+            <!-- <div></div> -->
+            <!-- Label/Toggle Selection -->
+            <label class="toggle-selection">
+              <input type="radio" name="" id="theme-1" checked>
+              <!-- <input type="text"> -->
+              <span class="checkmark"></span>
+            </label>
+            <label class="toggle-selection">
+              <input type="radio" name=""  id="theme-2">
+              <!-- <input type="text"> -->
+              <span class="checkmark"></span>
+            </label>
+            <label class="toggle-selection">
+              <input type="radio" name=""  id="theme-3">
+              <!-- <input type="text"> -->
+              <span class="checkmark"></span>
+            </label>
+
+          </form>
+          <!-- </div> -->
         </div>
       </div>
     </section>
@@ -70,4 +87,5 @@
 </footer>  
 </body>
 <script src="./scripts/calculator-functions.js"></script>
+<script src="./scripts/toggle.js"></script>
 </html>
